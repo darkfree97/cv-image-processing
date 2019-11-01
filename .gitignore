@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+venv
+.idea
+__pycache__
+
+*.jpg
+*.png
+!/src/coffee.jpg
+
+*.user
