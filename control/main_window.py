@@ -66,6 +66,26 @@ class MainWindow(QMainWindow):
         gray_rgb = cv2.cvtColor(cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY), cv2.COLOR_GRAY2RGB)  # Сіре зображення
         eq_rgb = cv2.threshold(gray_rgb, 127, 255, 0)[1]
 
+
+        # image2 = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
+        #
+        # dft = cv2.dft(np.float32(image2), flags=cv2.DFT_COMPLEX_OUTPUT)
+        # # shift the zero-frequncy component to the center of the spectrum
+        # dft_shift = np.fft.fftshift(dft)
+        # # save image of the image in the fourier domain.
+        # magnitude_spectrum = 20 * np.log(cv2.magnitude(dft_shift[:, :, 0], dft_shift[:, :, 1]))
+        #
+        # rows, cols = image2.shape
+        # crow, ccol = rows // 2, cols // 2
+        # # create a mask first, center square is 1, remaining all zeros
+        # mask = np.zeros((rows, cols, 2), np.uint8)
+        # mask[crow - 30:crow + 30, ccol - 30:ccol + 30] = 1
+        # # apply mask and inverse DFT
+        # fshift = dft_shift * mask
+        # f_ishift = np.fft.ifftshift(fshift)
+        # img_back = cv2.idft(f_ishift)
+        # img_back = cv2.magnitude(img_back[:, :, 0], img_back[:, :, 1])
+
         self.cv_images_meta = {
             'width': width,
             'height': height,
